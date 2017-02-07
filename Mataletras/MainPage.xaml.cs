@@ -25,6 +25,8 @@ namespace Mataletras
     {
         private Random random;
 
+        //Dani was here
+
         public MainPage()
         {
             this.InitializeComponent();

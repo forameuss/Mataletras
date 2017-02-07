@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>DD69A11E601262393210827BBCCAA0FEC8CECB151CEB7E6B411AB1CE1E24C376</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>87FA5666D5299E5151E80914AA476392A9C925719EE3D95A89BCB1F1E3F2FA48</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>dbfe042d-866f-48ee-a7e6-6727ea5ac025_1.0.0.0_x86__pjfy26a003sye</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>dbfe042d-866f-48ee-a7e6-6727ea5ac025_pjfy26a003sye!App</RegisteredUserModeAppID>
     <RegisteredPackageID>dbfe042d-866f-48ee-a7e6-6727ea5ac025</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-07T11:45:21.850</Modified>
+      <Modified>2017-02-07T13:32:21.185</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\Mataletras.exe">
       <PackagePath>entrypoint\Mataletras.exe</PackagePath>
-      <Modified>2017-02-07T11:45:19.867</Modified>
+      <Modified>2017-02-07T13:32:20.911</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -497,11 +497,11 @@
     <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-07T11:45:21.586</Modified>
+      <Modified>2017-02-07T13:09:50.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\Core\Mataletras.exe">
       <PackagePath>Mataletras.exe</PackagePath>
-      <Modified>2017-02-07T11:45:21.842</Modified>
+      <Modified>2017-02-07T13:32:21.158</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

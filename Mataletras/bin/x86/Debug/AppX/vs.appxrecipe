@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-10T12:21:20.849</Modified>
+      <Modified>2017-02-10T12:39:18.158</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Mataletras.exe">
       <PackagePath>entrypoint\Mataletras.exe</PackagePath>
-      <Modified>2017-02-10T12:21:19.895</Modified>
+      <Modified>2017-02-10T12:39:17.825</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -488,7 +488,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Mataletras.xr.xml">
       <PackagePath>Mataletras.xr.xml</PackagePath>
-      <Modified>2017-02-10T12:19:02.596</Modified>
+      <Modified>2017-02-10T12:38:32.917</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -497,11 +497,11 @@
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-10T12:21:20.391</Modified>
+      <Modified>2017-02-10T12:38:34.029</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Core\Mataletras.exe">
       <PackagePath>Mataletras.exe</PackagePath>
-      <Modified>2017-02-10T12:21:20.845</Modified>
+      <Modified>2017-02-10T12:39:18.151</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

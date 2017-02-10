@@ -34,6 +34,8 @@ namespace Mataletras
             random = new Random();
             palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
             SigPalabra();
+            TextBlock tb = new TextBlock();
+            pagina.Children.Add(new TextBlock() { Text = "JAJSJASJA" });
         }
 
 

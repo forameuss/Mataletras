@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid >
-        <TextBlock x:ConnectionId='1' Name="Texto" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>        
+    <Grid x:ConnectionId='1' Name="pagina">
+        <TextBlock x:ConnectionId='2' Name="Texto" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>        
     </Grid>
 </Page>
 

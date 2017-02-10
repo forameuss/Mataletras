@@ -10,13 +10,13 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>dbfe042d-866f-48ee-a7e6-6727ea5ac025</PackageIdentityName>
     <PackageIdentityPublisher>CN=anavarro</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>DD69A11E601262393210827BBCCAA0FEC8CECB151CEB7E6B411AB1CE1E24C376</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>87FA5666D5299E5151E80914AA476392A9C925719EE3D95A89BCB1F1E3F2FA48</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>dbfe042d-866f-48ee-a7e6-6727ea5ac025_1.0.0.0_x86__pjfy26a003sye</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>dbfe042d-866f-48ee-a7e6-6727ea5ac025_pjfy26a003sye!App</RegisteredUserModeAppID>
     <RegisteredPackageID>dbfe042d-866f-48ee-a7e6-6727ea5ac025</RegisteredPackageID>
@@ -25,16 +25,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-07T11:45:21.850</Modified>
+      <Modified>2017-02-10T12:21:20.849</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\Mataletras.exe">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Mataletras.exe">
       <PackagePath>entrypoint\Mataletras.exe</PackagePath>
-      <Modified>2017-02-07T11:45:19.867</Modified>
+      <Modified>2017-02-10T12:21:19.895</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -448,60 +448,60 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T21:11:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-02-07T09:58:56.560</Modified>
+      <Modified>2017-02-10T12:18:18.880</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2015-10-10T20:07:50.000</Modified>
+      <Modified>2017-02-10T12:18:13.654</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:07:50.000</Modified>
+      <Modified>2017-02-10T12:18:13.655</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:07:50.000</Modified>
+      <Modified>2017-02-10T12:18:13.658</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:07:50.000</Modified>
+      <Modified>2017-02-10T12:18:13.659</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:07:50.000</Modified>
+      <Modified>2017-02-10T12:18:13.661</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:07:50.000</Modified>
+      <Modified>2017-02-10T12:18:13.662</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:07:50.000</Modified>
+      <Modified>2017-02-10T12:18:13.664</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\Mataletras.xr.xml">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Mataletras.xr.xml">
       <PackagePath>Mataletras.xr.xml</PackagePath>
-      <Modified>2017-02-07T11:45:19.600</Modified>
+      <Modified>2017-02-10T12:19:02.596</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2016-09-19T08:39:06.665</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-07T11:45:21.586</Modified>
+      <Modified>2017-02-10T12:21:20.391</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Desktop\DI\Le Juego\Mataletras\Mataletras\bin\x86\Debug\Core\Mataletras.exe">
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Core\Mataletras.exe">
       <PackagePath>Mataletras.exe</PackagePath>
-      <Modified>2017-02-07T11:45:21.842</Modified>
+      <Modified>2017-02-10T12:21:20.845</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

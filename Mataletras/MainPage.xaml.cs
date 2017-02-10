@@ -27,6 +27,7 @@ namespace Mataletras
         private Palabra[] palabras;
         private Palabra palabraActual;
 
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -34,10 +35,30 @@ namespace Mataletras
             random = new Random();
             palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
             SigPalabra();
-            TextBlock tb = new TextBlock();
-            pagina.Children.Add(new TextBlock() { Text = "JAJSJASJA" });
+            
+            
+
+            //Timer
+            //Stopwatch reloj = new Stopwatch();
+            DispatcherTimer spawner = new DispatcherTimer();
+            spawner.Interval = TimeSpan.FromSeconds(4);
+            spawner.Tick += spawnPalabra;
+            spawner.Start();
+
+            DispatcherTimer animationer = new DispatcherTimer();
+            animationer.Interval = TimeSpan.FromSeconds(1);
+           // animationer.Tick += moverPalabra;
+            animationer.Start();
+
+            //reloj.Start();
+
         }
 
+        private void spawnPalabra(object sender, object e)
+        {
+            Palabra p = SigPalabra();
+            pagina.Children.Add(new TextBlock() { Text = p.letras });
+        }
 
 
         private void pulsarTecla(CoreWindow sender, KeyEventArgs e)
@@ -49,8 +70,7 @@ namespace Mataletras
                 else
                     Texto.Text = palabraActual.letras;
             }
-            /*if (e.VirtualKey.ToString() == Texto.Text)
-                SigLetra();*/
+            
         }
 
 
@@ -68,11 +88,11 @@ namespace Mataletras
         /// <summary>
         /// Escribe una palabra aleatoria en el TextBlock de la MainPage
         /// </summary>
-        public void SigPalabra()
+        public Palabra SigPalabra()
         {
             palabraActual = new Palabra(palabras[random.Next(0, palabras.Length)].letras);
             Debug.Write(palabraActual.letras);
-            Texto.Text = palabraActual.letras;
+            return palabraActual;
         }
     }
 }

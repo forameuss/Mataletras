@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Name="pagina">
-        <TextBlock Name="Texto" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>        
-    </Grid>
+    <Canvas Background="White" Name="pagina">
+        <TextBlock x:Name="test" Canvas.Top="0">Test</TextBlock>
+    </Canvas>
 </Page>

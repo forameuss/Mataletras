@@ -7,7 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Canvas Background="White" Name="pagina">
-        
-    </Canvas>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Name="txtContador" Grid.Row="0" HorizontalAlignment="Right" FontSize="25">0</TextBlock>
+        <Canvas Name="pagina">
+
+        </Canvas>
+    </Grid>
 </Page>

@@ -21,7 +21,7 @@ namespace Mataletras.Models
         public Palabra(string letras)
         {
             this.letras = letras;
-            textBlock = new TextBlock() { Text=letras};                                    
+            textBlock = new TextBlock() { Text = letras };
         }
 
         /// <summary>

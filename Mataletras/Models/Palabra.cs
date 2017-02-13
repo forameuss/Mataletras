@@ -21,7 +21,7 @@ namespace Mataletras.Models
         public Palabra(string letras)
         {
             this.letras = letras;
-            textBlock = new TextBlock() { Text=letras};
+            textBlock = new TextBlock() { Text=letras};                                    
         }
 
         /// <summary>
@@ -43,22 +43,21 @@ namespace Mataletras.Models
         /// <summary>
         /// Mueve un textBlock hacia abajo
         /// </summary>
-        /// <param name="tb">El TextBlock a mover</param>
         /// <param name="distancia">La distancia a recorrer</param>
         /// <param name="milisegundos">El tiempo que tarda en recorrer la distancia</param>
         public void moverPalabra(int distancia, int milisegundos)
         {
-        /*    Storyboard storyboard = new Storyboard();
+            Storyboard storyboard = new Storyboard();
 
-            DoubleAnimation translateYAnimation = new DoubleAnimation();
+            DoubleAnimation animacion = new DoubleAnimation();
 
-
-            translateYAnimation.From = 0;
-            y = distancia;
-            translateYAnimation.To = distancia;
-            translateYAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(milisegundos));
-            //Storyboard.SetTarget(translateYAnimation, tb); Storyboard.SetTargetProperty(translateYAnimation, "(Canvas.RenderTransform).(TranslateTransform.Y)");
-            storyboard.Children.Add(translateYAnimation); */
+            animacion.From = y;            
+            animacion.To = y+distancia;            
+            animacion.Duration = new Duration(TimeSpan.FromMilliseconds(milisegundos));
+            Storyboard.SetTarget(animacion, textBlock); Storyboard.SetTargetProperty(animacion, "(Canvas.Top)");
+            storyboard.Children.Add(animacion);
+            storyboard.Begin();
+            y += distancia;
         }
     }
 }

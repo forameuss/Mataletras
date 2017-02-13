@@ -26,7 +26,7 @@ namespace Mataletras
         private Random random;
         private Palabra[] palabras;
         private List<Palabra> palabrasActuales;
-
+        Canvas canvas;
 
         public MainPage()
         {
@@ -35,7 +35,7 @@ namespace Mataletras
             random = new Random();
             palabrasActuales = new List<Palabra>();
             palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
-
+            canvas = pagina;
 
             //Timer
             //Stopwatch reloj = new Stopwatch();
@@ -57,6 +57,10 @@ namespace Mataletras
         {
             Palabra p = SigPalabra();
             palabrasActuales.Add(p);
+            p.x = 100;
+            p.y = 30;
+            Canvas.SetTop(p.textBlock, p.y);
+            Canvas.SetLeft(p.textBlock, p.x);
             pagina.Children.Add(p.textBlock);
         }
 

@@ -7,7 +7,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+    <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
       <RootProperty Name="Name" />
       <RootProperty Name="Background" />
     </RootType>

@@ -26,6 +26,7 @@ namespace Mataletras
         private Random random;
         private Palabra[] palabras;
         private List<Palabra> palabrasActuales;
+        private int ALTURA = 500;
         int contador = 0;
 
         public MainPage()
@@ -98,12 +99,20 @@ namespace Mataletras
 
 
         public void moverPalabras(object sender, object e)
-        {            
-            foreach (Palabra p in palabrasActuales)
+        {
+            List<Palabra> aux = new List<Palabra>(palabrasActuales);
+            foreach (Palabra p in aux)
             {
-                p.moverPalabra(50, 2050);
+                if (p.y > ALTURA)
+                {
+                    palabrasActuales.Remove(p);
+                    pagina.Children.Remove(p.textBlock);
+                }
+                else
+                    p.moverPalabra(50, 2050);
             }
         }
+       
     }
 }
 

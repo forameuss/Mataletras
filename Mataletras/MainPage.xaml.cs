@@ -42,6 +42,7 @@ namespace Mataletras
             DispatcherTimer spawner = new DispatcherTimer();
             spawner.Interval = TimeSpan.FromSeconds(2);
             spawner.Tick += spawnPalabra;
+            spawner.Tick += moverPalabras;
             spawner.Start();
 
         /*    DispatcherTimer animationer = new DispatcherTimer();
@@ -91,6 +92,15 @@ namespace Mataletras
         public Palabra SigPalabra()
         {
             return new Palabra(palabras[random.Next(0, palabras.Length)].letras);            
+        }
+
+
+        public void moverPalabras(object sender, object e)
+        {            
+            foreach (Palabra p in palabrasActuales)
+            {
+                p.moverPalabra(50, 1999);
+            }
         }
     }
 }

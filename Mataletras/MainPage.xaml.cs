@@ -58,8 +58,8 @@ namespace Mataletras
         {
             Palabra p = SigPalabra();
             palabrasActuales.Add(p);
-            p.x = 100;
-            p.y = 30;
+            p.x = random.Next(0, 500);
+            p.y = random.Next(0, 50);
             Canvas.SetTop(p.textBlock, p.y);
             Canvas.SetLeft(p.textBlock, p.x);
             pagina.Children.Add(p.textBlock);

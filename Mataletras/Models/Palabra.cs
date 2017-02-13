@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 
 namespace Mataletras.Models
@@ -22,6 +24,7 @@ namespace Mataletras.Models
         {
             this.letras = letras;
             textBlock = new TextBlock() { Text = letras };
+            textBlock.Foreground = new SolidColorBrush(Colors.White);
         }
 
         /// <summary>

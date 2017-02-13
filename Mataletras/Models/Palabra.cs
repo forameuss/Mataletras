@@ -34,6 +34,7 @@ namespace Mataletras.Models
             bool res = false;
             if (letras[0] == letra){
                 letras = letras.Remove(0,1);
+                textBlock.Text = letras;
                 res = true;
             } 
             return res;
@@ -47,7 +48,7 @@ namespace Mataletras.Models
         /// <param name="milisegundos">El tiempo que tarda en recorrer la distancia</param>
         public void moverPalabra(int distancia, int milisegundos)
         {
-            Storyboard storyboard = new Storyboard();
+        /*    Storyboard storyboard = new Storyboard();
 
             DoubleAnimation translateYAnimation = new DoubleAnimation();
 
@@ -56,8 +57,8 @@ namespace Mataletras.Models
             y = distancia;
             translateYAnimation.To = distancia;
             translateYAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(milisegundos));
-            Storyboard.SetTarget(translateYAnimation, tb); Storyboard.SetTargetProperty(translateYAnimation, "(Canvas.RenderTransform).(TranslateTransform.Y)");
-            storyboard.Children.Add(translateYAnimation);
+            //Storyboard.SetTarget(translateYAnimation, tb); Storyboard.SetTargetProperty(translateYAnimation, "(Canvas.RenderTransform).(TranslateTransform.Y)");
+            storyboard.Children.Add(translateYAnimation); */
         }
     }
 }

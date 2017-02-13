@@ -25,54 +25,69 @@ namespace Mataletras
     {
         private Random random;
         private Palabra[] palabras;
-        private Palabra palabraActual;
+        private List<Palabra> palabrasActuales;
+
 
         public MainPage()
         {
             this.InitializeComponent();
             CoreWindow.GetForCurrentThread().KeyUp += pulsarTecla;
             random = new Random();
+            palabrasActuales = new List<Palabra>();
             palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
-            SigPalabra();
-            TextBlock tb = new TextBlock();
-            pagina.Children.Add(new TextBlock() { Text = "JAJSJASJA" });
+
+
+            //Timer
+            //Stopwatch reloj = new Stopwatch();
+            DispatcherTimer spawner = new DispatcherTimer();
+            spawner.Interval = TimeSpan.FromSeconds(2);
+            spawner.Tick += spawnPalabra;
+            spawner.Start();
+
+        /*    DispatcherTimer animationer = new DispatcherTimer();
+            animationer.Interval = TimeSpan.FromSeconds(1);
+           // animationer.Tick += moverPalabra;
+            animationer.Start();
+            */
+            //reloj.Start();
+
         }
 
+        private void spawnPalabra(object sender, object e)
+        {
+            Palabra p = SigPalabra();
+            palabrasActuales.Add(p);
+            pagina.Children.Add(p.textBlock);
+        }
 
 
         private void pulsarTecla(CoreWindow sender, KeyEventArgs e)
         {
-            if (palabraActual.quitarLetra(Char.ToUpper(e.VirtualKey.ToString()[0])))
+
+            List<Palabra> aux = new List<Palabra>(palabrasActuales);
+            
+            foreach (Palabra p in aux)
             {
-                if (palabraActual.letras.Length == 0)
-                    SigPalabra();
-                else
-                    Texto.Text = palabraActual.letras;
+                if (p.quitarLetra(Char.ToUpper(e.VirtualKey.ToString()[0])))
+                {
+                    if (p.letras.Length == 0)
+                    {
+                        palabrasActuales.Remove(p);
+                        pagina.Children.Remove(p.textBlock);
+                    }
+                }
             }
-            /*if (e.VirtualKey.ToString() == Texto.Text)
-                SigLetra();*/
+            
+            
         }
-
-
-        /// <summary>
-        /// Escribe una letra aleatoria en el TextBlock de la MainPage
-        /// </summary>
-        public void SigLetra()
-        {
-            int num = random.Next(0, 26);
-            char let = (char)('A' + num);
-            Texto.Text = let.ToString();
-        }
-
 
         /// <summary>
         /// Escribe una palabra aleatoria en el TextBlock de la MainPage
         /// </summary>
-        public void SigPalabra()
+        public Palabra SigPalabra()
         {
-            palabraActual = new Palabra(palabras[random.Next(0, palabras.Length)].letras);
-            Debug.Write(palabraActual.letras);
-            Texto.Text = palabraActual.letras;
+            return new Palabra(palabras[random.Next(0, palabras.Length)].letras);            
         }
     }
 }
+

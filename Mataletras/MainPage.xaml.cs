@@ -26,7 +26,7 @@ namespace Mataletras
         private Random random;
         private Palabra[] palabras;
         private List<Palabra> palabrasActuales;
-        Canvas canvas;
+        int contador = 0;
 
         public MainPage()
         {
@@ -35,7 +35,7 @@ namespace Mataletras
             random = new Random();
             palabrasActuales = new List<Palabra>();
             palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
-            canvas = pagina;
+            
 
             //Timer
             //Stopwatch reloj = new Stopwatch();
@@ -77,6 +77,8 @@ namespace Mataletras
                 {
                     if (p.letras.Length == 0)
                     {
+                        contador = contador + 1;
+                        txtContador.Text = contador.ToString();
                         palabrasActuales.Remove(p);
                         pagina.Children.Remove(p.textBlock);
                     }
@@ -99,7 +101,7 @@ namespace Mataletras
         {            
             foreach (Palabra p in palabrasActuales)
             {
-                p.moverPalabra(50, 1999);
+                p.moverPalabra(50, 2050);
             }
         }
     }

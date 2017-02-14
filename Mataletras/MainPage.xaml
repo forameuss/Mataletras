@@ -22,7 +22,6 @@
         </Canvas>
         <RelativePanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image Width="50" Height="50" Source="Assets/images/naveon.png" Name="nave"></Image>
-            <Image Width="50" Height="45" Source="Assets/images/piyun.png" Visibility="Collapsed"></Image>
         </RelativePanel>
         
     </Grid>

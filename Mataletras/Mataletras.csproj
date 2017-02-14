@@ -108,6 +108,10 @@
     <None Include="Mataletras_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\images\naveoff.png" />
+    <Content Include="Assets\images\naveon.png" />
+    <Content Include="Assets\images\piyun.png" />
+    <Content Include="Assets\images\universe.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -1,10 +1,7 @@
 # Mataletras
 
-TODO: que pasa cuando mueres<br>
-TODO: que pasa cuando fallas
+Juego de mecanografía, escribe las palabras que vayan apareciendo antes de que te maten.
 
-Aparecen letras aleatorias (abecedario[])
-Las que aparecen se meten en un array (letras[])
-
-Cuando aciertas desaparece esa letra del array (letras[i])
-TODO: ?Quitar una? o todas las letras repetidas?
+TODO: Vidas<br>
+TODO: Puntuaje<br>
+TODO: Animaciones<br>

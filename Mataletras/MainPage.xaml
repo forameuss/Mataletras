@@ -7,14 +7,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="White">
+    <Grid Margin="10">
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/images/universe.png"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Name="txtContador" Grid.Row="0" HorizontalAlignment="Right" FontSize="25">0</TextBlock>
-        <Canvas Name="pagina">
-
+        <TextBlock Name="txtContador" Grid.Row="0" HorizontalAlignment="Right" FontSize="25" Foreground="White">0</TextBlock>
+        <Canvas Grid.Row="1" Name="pagina">
+            
         </Canvas>
+        <RelativePanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Width="50" Height="50" Source="Assets/images/naveon.png" Name="nave"></Image>
+            <Image Width="50" Height="45" Source="Assets/images/piyun.png" Visibility="Collapsed"></Image>
+        </RelativePanel>
+        
     </Grid>
 </Page>

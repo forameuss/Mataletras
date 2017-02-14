@@ -41,7 +41,6 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Source" />
-      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Mataletras.MainPage" />
   </Roots.RootTypes>

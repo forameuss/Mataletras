@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Shapes;
+using Windows.UI;
 
 namespace Mataletras
 {
@@ -85,12 +87,15 @@ namespace Mataletras
                         txtContador.Text = contador.ToString();
                         palabrasActuales.Remove(p);
                         pagina.Children.Remove(p.textBlock);
+                        explotar(p.x, p.y);
                     }
                 }
             }
             
             
         }
+
+       
 
         /// <summary>
         /// Escribe una palabra aleatoria en el TextBlock de la MainPage
@@ -119,21 +124,22 @@ namespace Mataletras
 
         public void disparar(Palabra p)
         {
-            Image bala = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/piyun.png", UriKind.Absolute))};
-            bala.MaxHeight = 20; bala.MaxWidth = 20;
+            //Image bala = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/piyun.png", UriKind.Absolute))};
+            Rectangle bala = new Rectangle() { Fill = new SolidColorBrush(Colors.Red)};
+            bala.Height = 5; bala.Width = 5;
             Storyboard storyboard = new Storyboard();
             pagina.Children.Add(bala);
 
             DoubleAnimation translateYAnimation = new DoubleAnimation();
             
-            translateYAnimation.From = 400;
+            translateYAnimation.From = Canvas.GetTop(nave);
             translateYAnimation.To = p.y;
             translateYAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(100));
             Storyboard.SetTarget(translateYAnimation, bala); Storyboard.SetTargetProperty(translateYAnimation, "(Canvas.Top)");
             storyboard.Children.Add(translateYAnimation);
 
             DoubleAnimation translateXAnimation = new DoubleAnimation();
-            translateXAnimation.From = 250;            
+            translateXAnimation.From = Canvas.GetLeft(nave);            
             translateXAnimation.To = p.x;
             translateXAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(100));
             Storyboard.SetTarget(translateXAnimation, bala); Storyboard.SetTargetProperty(translateXAnimation, "(Canvas.Left)");
@@ -145,9 +151,25 @@ namespace Mataletras
             };
         }
 
+        private void explotar(int x, int y)
+        {
+            Image explosion = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/explosion.gif", UriKind.Absolute)) };
+            explosion.MaxHeight = 30;
+            explosion.MaxWidth = 30;
+            pagina.Children.Add(explosion);
+            Canvas.SetLeft(explosion, x);
+            Canvas.SetTop(explosion, y);            
+        }
+
+        private void FormName_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if ((this.Width != 500) & (this.Height != 800))
+            {
+                this.Width = 500;
+                this.Height = 800;
+            }
+        }
         
-
-
     }
 }
 

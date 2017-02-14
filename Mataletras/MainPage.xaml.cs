@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Mataletras
 {
@@ -26,6 +28,7 @@ namespace Mataletras
         private Random random;
         private Palabra[] palabras;
         private List<Palabra> palabrasActuales;
+        private int ALTURA = 500;
         int contador = 0;
 
         public MainPage()
@@ -75,6 +78,7 @@ namespace Mataletras
             {
                 if (p.quitarLetra(Char.ToUpper(e.VirtualKey.ToString()[0])))
                 {
+                    disparar(p);
                     if (p.letras.Length == 0)
                     {
                         contador = contador + 1;
@@ -98,12 +102,52 @@ namespace Mataletras
 
 
         public void moverPalabras(object sender, object e)
-        {            
-            foreach (Palabra p in palabrasActuales)
+        {
+            List<Palabra> aux = new List<Palabra>(palabrasActuales);
+            foreach (Palabra p in aux)
             {
-                p.moverPalabra(50, 2050);
+                if (p.y > ALTURA)
+                {
+                    palabrasActuales.Remove(p);
+                    pagina.Children.Remove(p.textBlock);
+                }
+                else
+                    p.moverPalabra(50, 2050);
             }
         }
+
+
+        public void disparar(Palabra p)
+        {
+            Image bala = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/piyun.png", UriKind.Absolute))};
+            bala.MaxHeight = 20; bala.MaxWidth = 20;
+            Storyboard storyboard = new Storyboard();
+            pagina.Children.Add(bala);
+
+            DoubleAnimation translateYAnimation = new DoubleAnimation();
+            
+            translateYAnimation.From = 400;
+            translateYAnimation.To = p.y;
+            translateYAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(100));
+            Storyboard.SetTarget(translateYAnimation, bala); Storyboard.SetTargetProperty(translateYAnimation, "(Canvas.Top)");
+            storyboard.Children.Add(translateYAnimation);
+
+            DoubleAnimation translateXAnimation = new DoubleAnimation();
+            translateXAnimation.From = 250;            
+            translateXAnimation.To = p.x;
+            translateXAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(100));
+            Storyboard.SetTarget(translateXAnimation, bala); Storyboard.SetTargetProperty(translateXAnimation, "(Canvas.Left)");
+            storyboard.Children.Add(translateXAnimation);
+            storyboard.Begin();
+            storyboard.Completed += delegate (object s, object e)
+            {
+                pagina.Children.Remove(bala);
+            };
+        }
+
+        
+
+
     }
 }
 

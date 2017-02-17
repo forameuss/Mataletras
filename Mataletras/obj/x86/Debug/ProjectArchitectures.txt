@@ -1,1 +1,1 @@
-X:\Documentos\GithubProjects\Mataletras\Mataletras\Mataletras.csproj;x86
+C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Mataletras.csproj;x86

@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Shapes;
 using Windows.UI;
 using System.Threading.Tasks;
+using Windows.Storage;
 
 namespace Mataletras
 {
@@ -35,6 +36,7 @@ namespace Mataletras
         int contador = 0;
         int posNaveX= 225;
         int posNaveY = 500;
+        int palActual= -1;
 
         public MainPage()
         {
@@ -43,7 +45,10 @@ namespace Mataletras
             CoreWindow.GetForCurrentThread().KeyDown += pulsarTeclaDireccion;
             random = new Random();
             palabrasActuales = new List<Palabra>();
-            palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
+            //palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
+            //palabras = cargarPalabras("ms-appx:///Assets/textos/test.txt");
+            //palabras = cargarPalabras("C:\\Users\\anavarro\\Documents\\test.txt");
+            cargarPalabras()
 
             Canvas.SetLeft(nave, posNaveX);
             Canvas.SetTop(nave, posNaveY);
@@ -58,6 +63,8 @@ namespace Mataletras
         
 
         }
+
+        
 
         private void spawnPalabra(object sender, object e)
         {
@@ -141,7 +148,9 @@ namespace Mataletras
         /// </summary>
         public Palabra SigPalabra()
         {
-            return new Palabra(palabras[random.Next(0, palabras.Length)].letras);            
+            //return new Palabra(palabras[random.Next(0, palabras.Length)].letras);            
+            palActual++;
+            return palabras[palActual];
         }
 
 
@@ -201,8 +210,22 @@ namespace Mataletras
             await Task.Delay(1000);
             pagina.Children.Remove(explosion);
         }
-
         
+
+        private async  void cargarPalabras(string v)
+        {
+            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///thedata.txt"));
+            string s = File.ReadAllText(v);
+            Palabra[] res = new Palabra[s.Split(' ').Length];
+            int i = 0;
+            foreach (string temp in s.Split(' '))
+            {
+                res[i] = new Palabra(temp);
+                i++;
+            }
+            palabras = res;           
+        }
+
 
         private void FormName_SizeChanged(object sender, SizeChangedEventArgs e)
         {

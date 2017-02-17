@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Shapes;
 using Windows.UI;
+using System.Threading.Tasks;
 
 namespace Mataletras
 {
@@ -32,30 +33,29 @@ namespace Mataletras
         private List<Palabra> palabrasActuales;
         private int ALTURA = 500;
         int contador = 0;
+        int posNaveX= 225;
+        int posNaveY = 500;
 
         public MainPage()
         {
             this.InitializeComponent();
             CoreWindow.GetForCurrentThread().KeyUp += pulsarTecla;
+            CoreWindow.GetForCurrentThread().KeyDown += pulsarTeclaDireccion;
             random = new Random();
             palabrasActuales = new List<Palabra>();
             palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
-            
 
-            //Timer
-            //Stopwatch reloj = new Stopwatch();
+            Canvas.SetLeft(nave, posNaveX);
+            Canvas.SetTop(nave, posNaveY);
+
+            //Timer            
             DispatcherTimer spawner = new DispatcherTimer();
             spawner.Interval = TimeSpan.FromSeconds(2);
             spawner.Tick += spawnPalabra;
             spawner.Tick += moverPalabras;
             spawner.Start();
 
-        /*    DispatcherTimer animationer = new DispatcherTimer();
-            animationer.Interval = TimeSpan.FromSeconds(1);
-           // animationer.Tick += moverPalabra;
-            animationer.Start();
-            */
-            //reloj.Start();
+        
 
         }
 
@@ -63,17 +63,29 @@ namespace Mataletras
         {
             Palabra p = SigPalabra();
             palabrasActuales.Add(p);
-            p.x = random.Next(0, 500);
+            p.x = random.Next(0, 400);
             p.y = random.Next(0, 50);
             Canvas.SetTop(p.textBlock, p.y);
             Canvas.SetLeft(p.textBlock, p.x);
             pagina.Children.Add(p.textBlock);
         }
 
+        private void pulsarTeclaDireccion(CoreWindow sender, KeyEventArgs e)
+        {
+            if ((e.VirtualKey.ToString() == "Right"))
+                moverNave("Left", 25);
+            if ((e.VirtualKey.ToString() == "Left"))
+                moverNave("Left", -25);
+            if ((e.VirtualKey.ToString() == "Up"))
+                moverNave("Top", -25);
+            if ((e.VirtualKey.ToString() == "Down"))
+                moverNave("Top", 25);
+        }
+
 
         private void pulsarTecla(CoreWindow sender, KeyEventArgs e)
-        {
-
+        {            
+           
             List<Palabra> aux = new List<Palabra>(palabrasActuales);
             
             foreach (Palabra p in aux)
@@ -95,7 +107,34 @@ namespace Mataletras
             
         }
 
+        private void moverNave(string direccion, int v)
+        {
+            Storyboard storyboard = new Storyboard();
+
+            DoubleAnimation animacion = new DoubleAnimation();
+
+            if (direccion == "Right" || direccion == "Left")
+            {
+                animacion.From = posNaveX;
+                animacion.To = posNaveX + v;
+            }
+            else
+            {
+                animacion.From = posNaveY;
+                animacion.To = posNaveY + v;
+            }
+            animacion.Duration = new Duration(TimeSpan.FromMilliseconds(100));
+            Storyboard.SetTarget(animacion, nave); Storyboard.SetTargetProperty(animacion, "(Canvas."+ direccion + ")");
+            storyboard.Children.Add(animacion);
+            storyboard.Begin();
+            if (direccion == "Right" || direccion == "Left")
+                posNaveX += v;
+            else
+                posNaveY += v;
+        }
        
+
+
 
         /// <summary>
         /// Escribe una palabra aleatoria en el TextBlock de la MainPage
@@ -139,7 +178,7 @@ namespace Mataletras
             storyboard.Children.Add(translateYAnimation);
 
             DoubleAnimation translateXAnimation = new DoubleAnimation();
-            translateXAnimation.From = Canvas.GetLeft(nave);            
+            translateXAnimation.From = Canvas.GetLeft(nave)+23;            
             translateXAnimation.To = p.x;
             translateXAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(100));
             Storyboard.SetTarget(translateXAnimation, bala); Storyboard.SetTargetProperty(translateXAnimation, "(Canvas.Left)");
@@ -151,15 +190,19 @@ namespace Mataletras
             };
         }
 
-        private void explotar(int x, int y)
+        private async void explotar(int x, int y)
         {
             Image explosion = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/explosion.gif", UriKind.Absolute)) };
             explosion.MaxHeight = 30;
             explosion.MaxWidth = 30;
             pagina.Children.Add(explosion);
             Canvas.SetLeft(explosion, x);
-            Canvas.SetTop(explosion, y);            
+            Canvas.SetTop(explosion, y);
+            await Task.Delay(1000);
+            pagina.Children.Remove(explosion);
         }
+
+        
 
         private void FormName_SizeChanged(object sender, SizeChangedEventArgs e)
         {

@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <TextBlock Name="txtContador" Grid.Row="0" HorizontalAlignment="Right" FontSize="25" Foreground="White">0</TextBlock>
         <Canvas Grid.Row="1" Name="pagina" Width="500">            
-            <Image Width="50" Height="50" Source="Assets/images/naveon.png" Name="nave" Canvas.Left="225" Canvas.Top="500"/>
+            <Image Width="50" Height="50" Source="Assets/images/nave.gif" Name="nave" Canvas.Left="225" Canvas.Top="500"/>
         </Canvas>
         <RelativePanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
 

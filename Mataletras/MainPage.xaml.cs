@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Shapes;
 using Windows.UI;
 using System.Threading.Tasks;
+using Windows.Storage;
 
 namespace Mataletras
 {
@@ -35,6 +36,8 @@ namespace Mataletras
         int contador = 0;
         int posNaveX= 225;
         int posNaveY = 500;
+        int palActual= -1;
+        bool queSigaLaFiesta = true;
 
         public MainPage()
         {
@@ -43,7 +46,7 @@ namespace Mataletras
             CoreWindow.GetForCurrentThread().KeyDown += pulsarTeclaDireccion;
             random = new Random();
             palabrasActuales = new List<Palabra>();
-            palabras = new Palabra[3] { new Palabra("PELOTA"), new Palabra("CASA"), new Palabra("INTERNET") };
+            cargarPalabras("");
 
             Canvas.SetLeft(nave, posNaveX);
             Canvas.SetTop(nave, posNaveY);
@@ -54,20 +57,21 @@ namespace Mataletras
             spawner.Tick += spawnPalabra;
             spawner.Tick += moverPalabras;
             spawner.Start();
-
-        
-
         }
+
+
 
         private void spawnPalabra(object sender, object e)
         {
-            Palabra p = SigPalabra();
-            palabrasActuales.Add(p);
-            p.x = random.Next(0, 400);
-            p.y = random.Next(0, 50);
-            Canvas.SetTop(p.textBlock, p.y);
-            Canvas.SetLeft(p.textBlock, p.x);
-            pagina.Children.Add(p.textBlock);
+            if (queSigaLaFiesta) { 
+                Palabra p = SigPalabra();
+                palabrasActuales.Add(p);
+                p.x = random.Next(0, 400);
+                p.y = random.Next(0, 50);
+                Canvas.SetTop(p.textBlock, p.y);
+                Canvas.SetLeft(p.textBlock, p.x);
+                pagina.Children.Add(p.textBlock);
+            }
         }
 
         private void pulsarTeclaDireccion(CoreWindow sender, KeyEventArgs e)
@@ -136,12 +140,13 @@ namespace Mataletras
 
 
 
-        /// <summary>
-        /// Escribe una palabra aleatoria en el TextBlock de la MainPage
-        /// </summary>
         public Palabra SigPalabra()
         {
-            return new Palabra(palabras[random.Next(0, palabras.Length)].letras);            
+            palActual++;
+            if((palActual+1)==palabras.Length)
+                queSigaLaFiesta = false;
+            return palabras[palActual];
+                    
         }
 
 
@@ -202,7 +207,26 @@ namespace Mataletras
             pagina.Children.Remove(explosion);
         }
 
-        
+
+        private void cargarPalabras(string v)
+        {
+            string s = System.IO.File.ReadAllText(".\\Assets\\textos\\test.txt");
+
+            Palabra[] res = new Palabra[s.Split(' ').Length];
+            int i = 0;
+            foreach (string temp in s.Split(' '))
+            {
+                res[i] = new Palabra(temp.ToUpper());
+                i++;
+            }
+            palabras = res;
+        }
+
+
+        private void gameOver()
+        {
+            //En construcción
+        }
 
         private void FormName_SizeChanged(object sender, SizeChangedEventArgs e)
         {

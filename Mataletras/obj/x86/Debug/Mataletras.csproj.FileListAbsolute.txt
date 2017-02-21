@@ -499,7 +499,6 @@ C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\Sy
 C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\Mataletras.csprojResolveAssemblyReference.cache
 C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\App.g.i.cs
 C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\App.g.cs
 C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\MainPage.g.i.cs
@@ -774,3 +773,4 @@ X:\Documentos\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\MultipleQualifi
 X:\Documentos\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\resources.en-us.resfiles
 X:\Documentos\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\resources.en-us.resfiles.intermediate
 X:\Documentos\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\obj\x86\Debug\Mataletras.csprojResolveAssemblyReference.cache

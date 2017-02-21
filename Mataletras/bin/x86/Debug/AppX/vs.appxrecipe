@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-14T11:38:39.464</Modified>
+      <Modified>2017-02-21T11:51:21.660</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\Mataletras.exe">
       <PackagePath>entrypoint\Mataletras.exe</PackagePath>
-      <Modified>2017-02-14T11:38:35.178</Modified>
+      <Modified>2017-02-21T11:51:20.797</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dgarcia\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -448,9 +448,9 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T21:11:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Assets\images\nave.gif">
-      <PackagePath>Assets\images\nave.gif</PackagePath>
-      <Modified>2017-02-14T11:37:41.620</Modified>
+    <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Assets\images\earth.png">
+      <PackagePath>Assets\images\earth.png</PackagePath>
+      <Modified>2017-02-17T13:12:26.459</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Assets\images\naveoff.png">
       <PackagePath>Assets\images\naveoff.png</PackagePath>
@@ -506,13 +506,29 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-02-10T12:46:17.739</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Assets\images\endEarth.gif">
+      <PackagePath>Assets\images\endEarth.gif</PackagePath>
+      <Modified>2017-02-17T13:12:26.687</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Assets\images\explosion.gif">
+      <PackagePath>Assets\images\explosion.gif</PackagePath>
+      <Modified>2017-02-17T09:04:09.619</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Assets\images\nave.gif">
+      <PackagePath>Assets\images\nave.gif</PackagePath>
+      <Modified>2017-02-14T11:37:41.620</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Assets\textos\test.txt">
+      <PackagePath>Assets\textos\test.txt</PackagePath>
+      <Modified>2017-02-21T11:35:40.172</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-02-10T12:46:18.164</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\Mataletras.xr.xml">
       <PackagePath>Mataletras.xr.xml</PackagePath>
-      <Modified>2017-02-14T11:38:34.834</Modified>
+      <Modified>2017-02-21T11:26:58.394</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -520,11 +536,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2017-02-14T11:38:37.133</Modified>
+      <Modified>2017-02-21T11:51:21.425</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dgarcia\Documents\GithubProjects\Mataletras\Mataletras\bin\x86\Debug\Core\Mataletras.exe">
       <PackagePath>Mataletras.exe</PackagePath>
-      <Modified>2017-02-14T11:38:39.453</Modified>
+      <Modified>2017-02-21T11:51:21.650</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

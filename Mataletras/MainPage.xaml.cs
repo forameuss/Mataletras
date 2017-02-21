@@ -38,6 +38,9 @@ namespace Mataletras
         int posNaveY = 500;
         int palActual= -1;
         bool queSigaLaFiesta = true;
+        DispatcherTimer spawner;
+
+        bool isOver = false;
 
         public MainPage()
         {
@@ -52,7 +55,7 @@ namespace Mataletras
             Canvas.SetTop(nave, posNaveY);
 
             //Timer            
-            DispatcherTimer spawner = new DispatcherTimer();
+            spawner = new DispatcherTimer();
             spawner.Interval = TimeSpan.FromSeconds(2);
             spawner.Tick += spawnPalabra;
             spawner.Tick += moverPalabras;
@@ -113,6 +116,7 @@ namespace Mataletras
 
         private void moverNave(string direccion, int v)
         {
+            
             Storyboard storyboard = new Storyboard();
 
             DoubleAnimation animacion = new DoubleAnimation();
@@ -159,6 +163,12 @@ namespace Mataletras
                 {
                     palabrasActuales.Remove(p);
                     pagina.Children.Remove(p.textBlock);
+                    int vidasActuales = txtVidas.Text.Length;
+                    if (vidasActuales > 0)
+                        txtVidas.Text = txtVidas.Text.Substring(0, vidasActuales - 1);
+                    else
+                        gameOver();
+                    
                 }
                 else
                     p.moverPalabra(50, 2050);
@@ -226,6 +236,7 @@ namespace Mataletras
         private void gameOver()
         {
             //En construcción
+            spawner.Stop();
         }
 
         private void FormName_SizeChanged(object sender, SizeChangedEventArgs e)

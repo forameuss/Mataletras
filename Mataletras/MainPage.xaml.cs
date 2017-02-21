@@ -230,10 +230,10 @@ namespace Mataletras
 
         private void FormName_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if ((this.Width != 500) & (this.Height != 800))
+            if ((this.Width != 500) & (this.Height != 600))
             {
                 this.Width = 500;
-                this.Height = 800;
+                this.Height = 600;
             }
         }
         

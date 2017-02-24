@@ -27,50 +27,74 @@ namespace Mataletras
     /// <summary>
     /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class ModoNormal : Page
     {
         private Random random;
         private Palabra[] palabras;
         private List<Palabra> palabrasActuales;
         private int ALTURA = 500;
         int contador = 0;
-        int posNaveX= 225;
+        int posNaveX = 225;
         int posNaveY = 500;
-        int palActual= -1;
+        int palActual = -1;
         bool queSigaLaFiesta = true;
+        DispatcherTimer spawner;
 
-        public MainPage()
+        public int DISTANCIA_RECORRIDA_PALABRA = 50;
+        public int DURACION_RECORRER_PALABRA = 1050;
+        public float INTERVALO_TICK = 1f;
+        public string NOMBRE_NIVEL = "";
+
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.InitializeComponent();
-            CoreWindow.GetForCurrentThread().KeyUp += pulsarTecla;
-            CoreWindow.GetForCurrentThread().KeyDown += pulsarTeclaDireccion;
-            random = new Random();
-            palabrasActuales = new List<Palabra>();
-            cargarPalabras("");
+            Nivel parameter = e.Parameter as Nivel;            
+            
+            DISTANCIA_RECORRIDA_PALABRA = parameter.DISTANCIA_RECORRIDA_PALABRA;
+            DURACION_RECORRER_PALABRA = parameter.DURACION_RECORRER_PALABRA;
+            INTERVALO_TICK = parameter.INTERVALO_TICK;
 
-            Canvas.SetLeft(nave, posNaveX);
-            Canvas.SetTop(nave, posNaveY);
+            cargarPalabras(parameter.NOMBRE_ARCHIVO);
 
             //Timer            
-            DispatcherTimer spawner = new DispatcherTimer();
-            spawner.Interval = TimeSpan.FromSeconds(2);
+            spawner = new DispatcherTimer();
+            spawner.Interval = TimeSpan.FromSeconds(INTERVALO_TICK);
             spawner.Tick += spawnPalabra;
             spawner.Tick += moverPalabras;
             spawner.Start();
         }
 
 
+        public ModoNormal()
+        {
+            this.InitializeComponent();
+            CoreWindow.GetForCurrentThread().KeyUp += pulsarTecla;
+            CoreWindow.GetForCurrentThread().KeyDown += pulsarTeclaDireccion;
+            random = new Random();
+            palabrasActuales = new List<Palabra>();
+            
+
+            posNaveX=(int) Canvas.GetLeft(nave);
+            posNaveY = (int)Canvas.GetTop(nave);
+            
+
+
+        }
+
+
 
         private void spawnPalabra(object sender, object e)
         {
-            if (queSigaLaFiesta) { 
+            if (queSigaLaFiesta)
+            {
                 Palabra p = SigPalabra();
                 palabrasActuales.Add(p);
                 p.x = random.Next(0, 400);
-                p.y = random.Next(0, 50);
+                //p.y = random.Next(0, 50);
+                p.y = 25;
                 Canvas.SetTop(p.textBlock, p.y);
                 Canvas.SetLeft(p.textBlock, p.x);
-                pagina.Children.Add(p.textBlock);
+                pagina.Children.Add(p.textBlock);                
             }
         }
 
@@ -88,10 +112,10 @@ namespace Mataletras
 
 
         private void pulsarTecla(CoreWindow sender, KeyEventArgs e)
-        {            
-           
+        {
+
             List<Palabra> aux = new List<Palabra>(palabrasActuales);
-            
+
             foreach (Palabra p in aux)
             {
                 if (p.quitarLetra(Char.ToUpper(e.VirtualKey.ToString()[0])))
@@ -104,15 +128,20 @@ namespace Mataletras
                         palabrasActuales.Remove(p);
                         pagina.Children.Remove(p.textBlock);
                         explotar(p.x, p.y);
+                        if (!queSigaLaFiesta)
+                            gameGanado();
                     }
                 }
             }
-            
-            
+
+
         }
+
+        
 
         private void moverNave(string direccion, int v)
         {
+
             Storyboard storyboard = new Storyboard();
 
             DoubleAnimation animacion = new DoubleAnimation();
@@ -128,7 +157,7 @@ namespace Mataletras
                 animacion.To = posNaveY + v;
             }
             animacion.Duration = new Duration(TimeSpan.FromMilliseconds(100));
-            Storyboard.SetTarget(animacion, nave); Storyboard.SetTargetProperty(animacion, "(Canvas."+ direccion + ")");
+            Storyboard.SetTarget(animacion, nave); Storyboard.SetTargetProperty(animacion, "(Canvas." + direccion + ")");
             storyboard.Children.Add(animacion);
             storyboard.Begin();
             if (direccion == "Right" || direccion == "Left")
@@ -136,17 +165,17 @@ namespace Mataletras
             else
                 posNaveY += v;
         }
-       
+
 
 
 
         public Palabra SigPalabra()
         {
             palActual++;
-            if((palActual+1)==palabras.Length)
+            if ((palActual + 1) == palabras.Length)
                 queSigaLaFiesta = false;
             return palabras[palActual];
-                    
+
         }
 
 
@@ -159,9 +188,15 @@ namespace Mataletras
                 {
                     palabrasActuales.Remove(p);
                     pagina.Children.Remove(p.textBlock);
+                    int vidasActuales = txtVidas.Text.Length;
+                    if (vidasActuales > 0)
+                        txtVidas.Text = txtVidas.Text.Substring(0, vidasActuales - 1);
+                    else
+                        gameOver();
+
                 }
                 else
-                    p.moverPalabra(50, 2050);
+                    p.moverPalabra(DISTANCIA_RECORRIDA_PALABRA, DURACION_RECORRER_PALABRA);                    
             }
         }
 
@@ -169,13 +204,13 @@ namespace Mataletras
         public void disparar(Palabra p)
         {
             //Image bala = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/piyun.png", UriKind.Absolute))};
-            Rectangle bala = new Rectangle() { Fill = new SolidColorBrush(Colors.Red)};
+            Rectangle bala = new Rectangle() { Fill = new SolidColorBrush(Colors.Red) };
             bala.Height = 5; bala.Width = 5;
             Storyboard storyboard = new Storyboard();
             pagina.Children.Add(bala);
 
             DoubleAnimation translateYAnimation = new DoubleAnimation();
-            
+
             translateYAnimation.From = Canvas.GetTop(nave);
             translateYAnimation.To = p.y;
             translateYAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(100));
@@ -183,7 +218,7 @@ namespace Mataletras
             storyboard.Children.Add(translateYAnimation);
 
             DoubleAnimation translateXAnimation = new DoubleAnimation();
-            translateXAnimation.From = Canvas.GetLeft(nave)+23;            
+            translateXAnimation.From = Canvas.GetLeft(nave) + 23;
             translateXAnimation.To = p.x;
             translateXAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(100));
             Storyboard.SetTarget(translateXAnimation, bala); Storyboard.SetTargetProperty(translateXAnimation, "(Canvas.Left)");
@@ -204,13 +239,13 @@ namespace Mataletras
             Canvas.SetLeft(explosion, x);
             Canvas.SetTop(explosion, y);
             await Task.Delay(1000);
-            pagina.Children.Remove(explosion);
+            pagina.Children.Remove(explosion);    
         }
 
 
         private void cargarPalabras(string v)
         {
-            string s = System.IO.File.ReadAllText(".\\Assets\\textos\\test.txt");
+            string s = System.IO.File.ReadAllText(".\\Assets\\textos\\"+v+".txt");
 
             Palabra[] res = new Palabra[s.Split(' ').Length];
             int i = 0;
@@ -224,19 +259,26 @@ namespace Mataletras
 
 
         private void gameOver()
-        {
-            //En construcción
+        {            
+            spawner.Stop();
+            this.Frame.Navigate(typeof(MainMenu));
         }
+
+        private void gameGanado()
+        {
+            gameOver();
+        }
+
+
 
         private void FormName_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if ((this.Width != 500) & (this.Height != 600))
+            if ((this.Width != 500) & (this.Height != 800))
             {
                 this.Width = 500;
-                this.Height = 600;
+                this.Height = 800;
             }
         }
-        
+
     }
 }
-

@@ -95,11 +95,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LevelsMenu.xaml.cs">
+      <DependentUpon>LevelsMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Models\Nivel.cs" />
+    <Compile Include="Niveles\ModoNormal.xaml.cs">
+      <DependentUpon>ModoNormal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Palabra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,12 +115,14 @@
     <None Include="Mataletras_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\images\earth.png" />
     <Content Include="Assets\images\nave.gif" />
     <Content Include="Assets\images\naveoff.png" />
     <Content Include="Assets\images\naveon.png" />
     <Content Include="Assets\images\naveonpower.png" />
     <Content Include="Assets\images\piyun.png" />
     <Content Include="Assets\images\universe.png" />
+    <Content Include="Assets\textos\testo.txt" />
     <Content Include="Assets\textos\test.txt" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -132,11 +138,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="LevelsMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Niveles\ModoNormal.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

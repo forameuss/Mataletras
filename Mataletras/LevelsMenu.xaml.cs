@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mataletras.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,9 +22,9 @@ namespace Mataletras
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class MainMenu : Page
+    public sealed partial class LevelsMenu : Page
     {
-        public MainMenu()
+        public LevelsMenu()
         {
             this.InitializeComponent();
         }
@@ -31,17 +32,20 @@ namespace Mataletras
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button b = (Button)sender;            
+            Button b = (Button)sender;
+            Nivel nivel = null;
             switch (b.Content.ToString())
             {
-                case "Modo Normal":                    
-                    this.Frame.Navigate(typeof(LevelsMenu));
+                case "Nivel 1":
+                    nivel = new Nivel("test",50,2050,2f);
+                    this.Frame.Navigate(typeof(ModoNormal), nivel);
                     break;
-                case "Modo Extremo":                    
-                    this.Frame.Navigate(typeof(LevelsMenu));
+                case "Nivel 2":
+                    nivel = new Nivel("testo", 50, 2050, 2f);
+                    this.Frame.Navigate(typeof(ModoNormal), nivel);
                     break;
-                case "Modo Salir":
-                    CoreApplication.Exit();
+                case "¡Atrás!":
+                    this.Frame.Navigate(typeof(MainMenu));
                     break;
             }
         }

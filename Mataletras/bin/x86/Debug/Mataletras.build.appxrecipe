@@ -334,8 +334,8 @@
     <AppxPackagedFile Include="C:\Users\anavarro\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\images\nave.gif">
-      <PackagePath>Assets\images\nave.gif</PackagePath>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\images\earth.png">
+      <PackagePath>Assets\images\earth.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\images\naveoff.png">
       <PackagePath>Assets\images\naveoff.png</PackagePath>
@@ -378,6 +378,12 @@
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\images\nave.gif">
+      <PackagePath>Assets\images\nave.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\testo.txt">
+      <PackagePath>Assets\textos\testo.txt</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\test.txt">
       <PackagePath>Assets\textos\test.txt</PackagePath>

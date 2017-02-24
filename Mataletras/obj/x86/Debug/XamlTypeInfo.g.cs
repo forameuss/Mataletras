@@ -132,17 +132,19 @@ namespace Mataletras.Mataletras_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
-            _typeNameTable[0] = "Mataletras.MainMenu";
+            _typeNameTable = new string[5];
+            _typeNameTable[0] = "Mataletras.LevelsMenu";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Mataletras.MainPage";
+            _typeNameTable[3] = "Mataletras.MainMenu";
+            _typeNameTable[4] = "Mataletras.ModoNormal";
 
-            _typeTable = new global::System.Type[4];
-            _typeTable[0] = typeof(global::Mataletras.MainMenu);
+            _typeTable = new global::System.Type[5];
+            _typeTable[0] = typeof(global::Mataletras.LevelsMenu);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Mataletras.MainPage);
+            _typeTable[3] = typeof(global::Mataletras.MainMenu);
+            _typeTable[4] = typeof(global::Mataletras.ModoNormal);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -177,8 +179,9 @@ namespace Mataletras.Mataletras_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainMenu() { return new global::Mataletras.MainMenu(); }
-        private object Activate_3_MainPage() { return new global::Mataletras.MainPage(); }
+        private object Activate_0_LevelsMenu() { return new global::Mataletras.LevelsMenu(); }
+        private object Activate_3_MainMenu() { return new global::Mataletras.MainMenu(); }
+        private object Activate_4_ModoNormal() { return new global::Mataletras.ModoNormal(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -190,9 +193,9 @@ namespace Mataletras.Mataletras_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Mataletras.MainMenu
+            case 0:   //  Mataletras.LevelsMenu
                 userType = new global::Mataletras.Mataletras_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainMenu;
+                userType.Activator = Activate_0_LevelsMenu;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -205,9 +208,16 @@ namespace Mataletras.Mataletras_XamlTypeInfo
                 xamlType = new global::Mataletras.Mataletras_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Mataletras.MainPage
+            case 3:   //  Mataletras.MainMenu
                 userType = new global::Mataletras.Mataletras_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
+                userType.Activator = Activate_3_MainMenu;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Mataletras.ModoNormal
+                userType = new global::Mataletras.Mataletras_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_ModoNormal;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

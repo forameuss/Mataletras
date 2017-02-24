@@ -37,11 +37,11 @@ namespace Mataletras
             switch (b.Content.ToString())
             {
                 case "Nivel 1":
-                    nivel = new Nivel("test",50,2050,2f);
+                    nivel = new Nivel("Nivel1",50,2050,2f);
                     this.Frame.Navigate(typeof(ModoNormal), nivel);
                     break;
                 case "Nivel 2":
-                    nivel = new Nivel("testo", 50, 2050, 2f);
+                    nivel = new Nivel("Nivel2", 50, 2050, 2f);
                     this.Frame.Navigate(typeof(ModoNormal), nivel);
                     break;
                 case "¡Atrás!":

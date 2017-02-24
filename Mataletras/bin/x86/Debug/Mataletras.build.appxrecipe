@@ -382,6 +382,12 @@
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\images\nave.gif">
       <PackagePath>Assets\images\nave.gif</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\Nivel2.txt">
+      <PackagePath>Assets\textos\Nivel2.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\Nivel1.txt">
+      <PackagePath>Assets\textos\Nivel1.txt</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\testo.txt">
       <PackagePath>Assets\textos\testo.txt</PackagePath>
     </AppxPackagedFile>

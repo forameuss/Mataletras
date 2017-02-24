@@ -128,6 +128,7 @@ namespace Mataletras
                         palabrasActuales.Remove(p);
                         pagina.Children.Remove(p.textBlock);
                         explotar(p.x, p.y);
+                        //Cambiar por palabrasActuales.size==0
                         if (!queSigaLaFiesta)
                             gameGanado();
                     }

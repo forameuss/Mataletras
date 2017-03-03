@@ -116,6 +116,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\images\earth.png" />
+    <Content Include="Assets\images\explosion.gif" />
+    <Content Include="Assets\images\gameOver.gif" />
     <Content Include="Assets\images\nave.gif" />
     <Content Include="Assets\images\naveoff.png" />
     <Content Include="Assets\images\naveon.png" />

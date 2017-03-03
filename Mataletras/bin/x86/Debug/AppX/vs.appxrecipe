@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-24T13:35:48.006</Modified>
+      <Modified>2017-03-03T09:35:17.822</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Mataletras.exe">
       <PackagePath>entrypoint\Mataletras.exe</PackagePath>
-      <Modified>2017-02-24T13:34:52.406</Modified>
+      <Modified>2017-03-03T09:35:17.133</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -506,13 +506,21 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-02-10T12:18:13.664</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\images\explosion.gif">
+      <PackagePath>Assets\images\explosion.gif</PackagePath>
+      <Modified>2017-02-14T11:10:34.382</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\images\gameOver.gif">
+      <PackagePath>Assets\images\gameOver.gif</PackagePath>
+      <Modified>2017-03-03T08:51:35.038</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\images\nave.gif">
       <PackagePath>Assets\images\nave.gif</PackagePath>
       <Modified>2017-02-17T12:46:26.904</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\Nivel2.txt">
       <PackagePath>Assets\textos\Nivel2.txt</PackagePath>
-      <Modified>2017-02-24T13:33:18.438</Modified>
+      <Modified>2017-03-03T08:53:47.447</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\Nivel1.txt">
       <PackagePath>Assets\textos\Nivel1.txt</PackagePath>
@@ -520,7 +528,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\testo.txt">
       <PackagePath>Assets\textos\testo.txt</PackagePath>
-      <Modified>2017-02-24T13:00:26.317</Modified>
+      <Modified>2017-03-03T08:53:32.523</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\test.txt">
       <PackagePath>Assets\textos\test.txt</PackagePath>
@@ -532,7 +540,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Mataletras.xr.xml">
       <PackagePath>Mataletras.xr.xml</PackagePath>
-      <Modified>2017-02-24T13:19:11.535</Modified>
+      <Modified>2017-03-03T09:35:16.881</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -541,11 +549,11 @@
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-24T13:34:52.912</Modified>
+      <Modified>2017-03-03T09:35:17.641</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Core\Mataletras.exe">
       <PackagePath>Mataletras.exe</PackagePath>
-      <Modified>2017-02-24T13:35:47.991</Modified>
+      <Modified>2017-03-03T09:35:17.808</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

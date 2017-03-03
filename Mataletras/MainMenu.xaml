@@ -6,13 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        
+
         <StackPanel HorizontalAlignment="Center" Margin="5">
             <TextBlock Text="MARTALETRAS" HorizontalAlignment="Center" FontSize="70" Margin="5"/>
             <Button Content="Modo Normal" HorizontalAlignment="Center" FontSize="50" Margin="5" Click="Button_Click"/>
-            <Button Content="Modo Extremo" HorizontalAlignment="Center" FontSize="50" Margin="5" Click="Button_Click"/>
+            <Button Content="Modo Extremo" HorizontalAlignment="Center" FontSize="50" Margin="5" Click="Button_Click"/>            
             <Button Content="Modo Salir" HorizontalAlignment="Center" FontSize="50" Margin="5" Click="Button_Click"/>
+            <AppBarButton Icon="Help" Click="AppBarButton_Click" HorizontalAlignment="Center"/>
         </StackPanel>      
         
         

@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -58,5 +59,12 @@ namespace Mataletras
             }
         }
 
+        private async void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageDialog showDialog = new MessageDialog("CREADO POR DANIEL GARCÍA Y ALBERTO NAVARRO");
+            showDialog.Commands.Add(new UICommand("Ok"));
+            showDialog.Commands.Add(new UICommand("Me parece correcto"));
+            await showDialog.ShowAsync();
+        }
     }
 }

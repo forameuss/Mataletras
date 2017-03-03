@@ -40,6 +40,11 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Mataletras.LevelsMenu" />
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Icon" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootEvent Name="Click" />
+    </RootType>
     <RootType FullName="Mataletras.MainMenu" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />

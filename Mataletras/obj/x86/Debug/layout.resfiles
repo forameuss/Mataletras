@@ -1,5 +1,7 @@
 WinMetadata\Windows.winmd
 Assets\images\earth.png
+Assets\images\explosion.gif
+Assets\images\gameOver.gif
 Assets\images\nave.gif
 Assets\images\naveoff.png
 Assets\images\naveon.png

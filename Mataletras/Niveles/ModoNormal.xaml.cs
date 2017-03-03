@@ -21,6 +21,7 @@ using Windows.UI.Xaml.Shapes;
 using Windows.UI;
 using System.Threading.Tasks;
 using Windows.Storage;
+using Windows.UI.Popups;
 
 namespace Mataletras
 {
@@ -39,6 +40,7 @@ namespace Mataletras
         int palActual = -1;
         bool queSigaLaFiesta = true;
         DispatcherTimer spawner;
+        Nivel nivel;
 
         public int DISTANCIA_RECORRIDA_PALABRA = 50;
         public int DURACION_RECORRER_PALABRA = 1050;
@@ -48,7 +50,8 @@ namespace Mataletras
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Nivel parameter = e.Parameter as Nivel;            
+            Nivel parameter = e.Parameter as Nivel;
+            nivel = parameter;          
             
             DISTANCIA_RECORRIDA_PALABRA = parameter.DISTANCIA_RECORRIDA_PALABRA;
             DURACION_RECORRER_PALABRA = parameter.DURACION_RECORRER_PALABRA;
@@ -128,9 +131,9 @@ namespace Mataletras
                         palabrasActuales.Remove(p);
                         pagina.Children.Remove(p.textBlock);
                         explotar(p.x, p.y);
-                        //Cambiar por palabrasActuales.size==0
-                        if (!queSigaLaFiesta)
-                            gameGanado();
+                        
+                        if (palabrasActuales.Count==0&&!queSigaLaFiesta)
+                          gameGanado();
                     }
                 }
             }
@@ -190,7 +193,7 @@ namespace Mataletras
                     palabrasActuales.Remove(p);
                     pagina.Children.Remove(p.textBlock);
                     int vidasActuales = txtVidas.Text.Length;
-                    if (vidasActuales > 0)
+                    if (vidasActuales > 1)
                         txtVidas.Text = txtVidas.Text.Substring(0, vidasActuales - 1);
                     else
                         gameOver();
@@ -240,7 +243,7 @@ namespace Mataletras
             Canvas.SetLeft(explosion, x);
             Canvas.SetTop(explosion, y);
             await Task.Delay(1000);
-            pagina.Children.Remove(explosion);    
+            pagina.Children.Remove(explosion);
         }
 
 
@@ -259,17 +262,61 @@ namespace Mataletras
         }
 
 
-        private void gameOver()
-        {            
+        private async void gameOver()
+        {
             spawner.Stop();
-            this.Frame.Navigate(typeof(MainMenu));
+            Image explosion = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/gameOver.gif", UriKind.Absolute)) };
+            explosion.MaxHeight = 300;
+            explosion.MaxWidth = 300;
+            pagina.Children.Add(explosion);
+            Canvas.SetLeft(explosion, 150);
+            Canvas.SetTop(explosion, 150);
+            await Task.Delay(1000);
+            pagina.Children.Remove(explosion);
+            mensajePerdedor();
+            
         }
 
         private void gameGanado()
         {
-            gameOver();
+            mensajeGanador();
         }
 
+        private async void mensajePerdedor()
+        {
+            MessageDialog showDialog = new MessageDialog("La tierra ha sido destruida, ha muerto mucha gente. ¿Deseas reiniciar el nivel?");
+            showDialog.Commands.Add(new UICommand("Sí") { Id = 0 });
+            showDialog.Commands.Add(new UICommand("No") { Id = 1 });
+            showDialog.Title = "GAME OVER";
+            showDialog.DefaultCommandIndex = 0;
+            showDialog.CancelCommandIndex = 1;
+            var result = await showDialog.ShowAsync();
+            if ((int)result.Id == 0)
+                this.Frame.Navigate(typeof(ModoNormal), nivel);
+            else
+                this.Frame.Navigate(typeof(MainMenu));
+        }
+
+        private async void mensajeGanador()
+        {
+            MessageDialog showDialog = new MessageDialog("La tierra ha sido salvada, ha sobrevivido mucha gente.");
+            showDialog.Commands.Add(new UICommand("Continuar") { Id = 0 });
+            showDialog.Commands.Add(new UICommand("Reiniciar") { Id = 1 });
+            showDialog.Title = "YU WIN";
+            showDialog.DefaultCommandIndex = 0;
+            showDialog.CancelCommandIndex = 1;
+            var result = await showDialog.ShowAsync();
+            if ((int)result.Id == 0)
+            {
+                string txt = nivel.NOMBRE_ARCHIVO.Substring(0, 5);
+                string lvl = nivel.NOMBRE_ARCHIVO.Substring(5, 1);
+                lvl = ""+(int.Parse(lvl) + 1);
+                nivel.NOMBRE_ARCHIVO = txt + lvl;
+                this.Frame.Navigate(typeof(ModoNormal), nivel);
+            }
+            else
+                this.Frame.Navigate(typeof(ModoNormal), nivel);
+        }
 
 
         private void FormName_SizeChanged(object sender, SizeChangedEventArgs e)

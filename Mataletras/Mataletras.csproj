@@ -127,6 +127,7 @@
     <Content Include="Assets\sound\disparo.mp3" />
     <Content Include="Assets\sound\explosion.mp3" />
     <Content Include="Assets\sound\music.mp3" />
+    <Content Include="Assets\textos\genesis.txt" />
     <Content Include="Assets\textos\Nivel2.txt" />
     <Content Include="Assets\textos\Nivel1.txt" />
     <Content Include="Assets\textos\testo.txt" />

@@ -397,6 +397,9 @@
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\sound\music.mp3">
       <PackagePath>Assets\sound\music.mp3</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\genesis.txt">
+      <PackagePath>Assets\textos\genesis.txt</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\Nivel2.txt">
       <PackagePath>Assets\textos\Nivel2.txt</PackagePath>
     </AppxPackagedFile>

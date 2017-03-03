@@ -41,7 +41,7 @@ namespace Mataletras
                     this.Frame.Navigate(typeof(ModoNormal), nivel);
                     break;
                 case "Nivel 2":
-                    nivel = new Nivel("Nivel2", 50, 2050, 2f);
+                    nivel = new Nivel("genesis", 50, 2050, 2f);
                     this.Frame.Navigate(typeof(ModoNormal), nivel);
                     break;
                 case "¡Atrás!":

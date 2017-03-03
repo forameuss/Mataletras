@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-03T12:58:28.790</Modified>
+      <Modified>2017-03-03T13:32:39.852</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Mataletras.exe">
       <PackagePath>entrypoint\Mataletras.exe</PackagePath>
-      <Modified>2017-03-03T12:58:27.691</Modified>
+      <Modified>2017-03-03T13:30:28.723</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -530,6 +530,10 @@
       <PackagePath>Assets\sound\music.mp3</PackagePath>
       <Modified>2017-03-03T12:18:42.084</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\genesis.txt">
+      <PackagePath>Assets\textos\genesis.txt</PackagePath>
+      <Modified>2017-03-03T13:32:38.386</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\Assets\textos\Nivel2.txt">
       <PackagePath>Assets\textos\Nivel2.txt</PackagePath>
       <Modified>2017-03-03T08:53:47.447</Modified>
@@ -561,11 +565,11 @@
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-03T12:58:28.460</Modified>
+      <Modified>2017-03-03T13:26:26.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anavarro\Documents\GitHub\Mataletras\Mataletras\bin\x86\Debug\Core\Mataletras.exe">
       <PackagePath>Mataletras.exe</PackagePath>
-      <Modified>2017-03-03T12:58:28.772</Modified>
+      <Modified>2017-03-03T13:32:39.844</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -320,8 +320,7 @@ namespace Mataletras
             Canvas.SetTop(explosion, 150);
             await Task.Delay(1000);
             pagina.Children.Remove(explosion);
-            mensajePerdedor();
-            
+            mensajePerdedor();            
         }
 
         private void gameGanado()

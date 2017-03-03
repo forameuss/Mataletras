@@ -47,6 +47,13 @@ namespace Mataletras
         public float INTERVALO_TICK = 1f;
         public string NOMBRE_NIVEL = "";
 
+        public MediaElement musica;
+        public MediaElement disparo1;
+        public MediaElement disparo2;
+        public MediaElement explosionM;        
+
+
+
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -58,6 +65,7 @@ namespace Mataletras
             INTERVALO_TICK = parameter.INTERVALO_TICK;
 
             cargarPalabras(parameter.NOMBRE_ARCHIVO);
+            cargarSonidos(parameter.NOMBRE_ARCHIVO);
 
             //Timer            
             spawner = new DispatcherTimer();
@@ -67,6 +75,7 @@ namespace Mataletras
             spawner.Start();
         }
 
+       
 
         public ModoNormal()
         {
@@ -79,10 +88,13 @@ namespace Mataletras
 
             posNaveX=(int) Canvas.GetLeft(nave);
             posNaveY = (int)Canvas.GetTop(nave);
+
+
             
 
-
         }
+
+        
 
 
 
@@ -102,7 +114,8 @@ namespace Mataletras
         }
 
         private void pulsarTeclaDireccion(CoreWindow sender, KeyEventArgs e)
-        {
+        {            
+         
             if ((e.VirtualKey.ToString() == "Right"))
                 moverNave("Left", 25);
             if ((e.VirtualKey.ToString() == "Left"))
@@ -116,6 +129,7 @@ namespace Mataletras
 
         private void pulsarTecla(CoreWindow sender, KeyEventArgs e)
         {
+            
 
             List<Palabra> aux = new List<Palabra>(palabrasActuales);
 
@@ -123,6 +137,11 @@ namespace Mataletras
             {
                 if (p.quitarLetra(Char.ToUpper(e.VirtualKey.ToString()[0])))
                 {
+                    if (disparo1.CurrentState == MediaElementState.Playing)
+                        disparo1.Play();
+                    else
+                        disparo2.Play();
+
                     disparar(p);
                     if (p.letras.Length == 0)
                     {
@@ -206,7 +225,7 @@ namespace Mataletras
 
 
         public void disparar(Palabra p)
-        {
+        {            
             //Image bala = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/piyun.png", UriKind.Absolute))};
             Rectangle bala = new Rectangle() { Fill = new SolidColorBrush(Colors.Red) };
             bala.Height = 5; bala.Width = 5;
@@ -236,6 +255,7 @@ namespace Mataletras
 
         private async void explotar(int x, int y)
         {
+            explosionM.Play();
             Image explosion = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/explosion.gif", UriKind.Absolute)) };
             explosion.MaxHeight = 30;
             explosion.MaxWidth = 30;
@@ -262,8 +282,35 @@ namespace Mataletras
         }
 
 
-        private async void gameOver()
+        private async void cargarSonidos(string nOMBRE_ARCHIVO)
         {
+            musica = new MediaElement();
+            musica.IsLooping = true;
+            StorageFolder Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+            Folder = await Folder.GetFolderAsync("\\Assets\\sound\\");
+            StorageFile sf = await Folder.GetFileAsync("music.mp3");
+            musica.SetSource(await sf.OpenAsync(FileAccessMode.Read), sf.ContentType);
+            
+            //musica.Play();
+
+            disparo1= new MediaElement();
+            disparo2 = new MediaElement();
+            disparo1.AutoPlay = false;
+            disparo2.AutoPlay = false;                        
+            sf = await Folder.GetFileAsync("disparo.mp3");
+            disparo1.SetSource(await sf.OpenAsync(FileAccessMode.Read), sf.ContentType);
+            disparo2.SetSource(await sf.OpenAsync(FileAccessMode.Read), sf.ContentType);
+
+            explosionM = new MediaElement();
+            explosionM.AutoPlay = false;            
+            sf = await Folder.GetFileAsync("explosion.mp3");
+            explosionM.SetSource(await sf.OpenAsync(FileAccessMode.Read), sf.ContentType);            
+        }
+
+
+        private async void gameOver()
+        {            
+            musica.Stop();
             spawner.Stop();
             Image explosion = new Image() { Source = new BitmapImage(new Uri("ms-appx:///Assets/images/gameOver.gif", UriKind.Absolute)) };
             explosion.MaxHeight = 300;
@@ -279,12 +326,13 @@ namespace Mataletras
 
         private void gameGanado()
         {
+            musica.Stop();
             mensajeGanador();
         }
 
         private async void mensajePerdedor()
         {
-            MessageDialog showDialog = new MessageDialog("La tierra ha sido destruida, ha muerto mucha gente. ¿Deseas reiniciar el nivel?");
+            MessageDialog showDialog = new MessageDialog("La tierra ha sido destruida, ha muerto mucha gente, entre ellos Donald Trump. ¿Deseas reiniciar el nivel?");
             showDialog.Commands.Add(new UICommand("Sí") { Id = 0 });
             showDialog.Commands.Add(new UICommand("No") { Id = 1 });
             showDialog.Title = "GAME OVER";
@@ -299,7 +347,7 @@ namespace Mataletras
 
         private async void mensajeGanador()
         {
-            MessageDialog showDialog = new MessageDialog("La tierra ha sido salvada, ha sobrevivido mucha gente.");
+            MessageDialog showDialog = new MessageDialog("La tierra ha sido salvada, ha sobrevivido mucha gente, entre ellos Donald Trump");
             showDialog.Commands.Add(new UICommand("Continuar") { Id = 0 });
             showDialog.Commands.Add(new UICommand("Reiniciar") { Id = 1 });
             showDialog.Title = "YU WIN";

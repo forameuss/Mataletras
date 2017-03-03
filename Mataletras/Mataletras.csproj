@@ -124,6 +124,9 @@
     <Content Include="Assets\images\naveonpower.png" />
     <Content Include="Assets\images\piyun.png" />
     <Content Include="Assets\images\universe.png" />
+    <Content Include="Assets\sound\disparo.mp3" />
+    <Content Include="Assets\sound\explosion.mp3" />
+    <Content Include="Assets\sound\music.mp3" />
     <Content Include="Assets\textos\Nivel2.txt" />
     <Content Include="Assets\textos\Nivel1.txt" />
     <Content Include="Assets\textos\testo.txt" />

@@ -18,13 +18,15 @@ namespace Mataletras.Models
         public TextBlock textBlock { get; set; }
         public int x { get; set;}
         public int y { get; set; }
+        public int tipo { get; set; }
 
         //Constructor
-        public Palabra(string letras)
+        public Palabra(string letras, int tipo, Color c)
         {
             this.letras = letras;
             textBlock = new TextBlock() { Text = letras };
-            textBlock.Foreground = new SolidColorBrush(Colors.White);
+            textBlock.Foreground = new SolidColorBrush(c);
+            this.tipo = tipo;
         }
 
         /// <summary>

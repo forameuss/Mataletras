@@ -47,6 +47,9 @@ namespace Mataletras
         public float INTERVALO_TICK = 1f;
         public string NOMBRE_NIVEL = "";
 
+        public int ENEMY = 1;
+        public int LIFE = 2;
+
         public MediaElement musica;
         public MediaElement disparo1;
         public MediaElement disparo2;
@@ -150,6 +153,8 @@ namespace Mataletras
                         palabrasActuales.Remove(p);
                         pagina.Children.Remove(p.textBlock);
                         explotar(p.x, p.y);
+                        if(p.tipo == LIFE)
+                            txtVidas.Text += "♥";
                         
                         if (palabrasActuales.Count==0&&!queSigaLaFiesta)
                           gameGanado();
@@ -275,7 +280,16 @@ namespace Mataletras
             int i = 0;
             foreach (string temp in s.Split(' '))
             {
-                res[i] = new Palabra(temp.ToUpper());
+                
+                if (!temp.Equals(""))
+                {
+                    res[i] = new Palabra(temp.ToUpper(),ENEMY, Colors.White);
+                    
+                }
+                else
+                {
+                    res[i] = new Palabra("VIDA",LIFE, Colors.Red);
+                }
                 i++;
             }
             palabras = res;

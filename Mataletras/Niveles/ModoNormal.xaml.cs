@@ -275,13 +275,13 @@ namespace Mataletras
         private void cargarPalabras(string v)
         {
             string s = System.IO.File.ReadAllText(".\\Assets\\textos\\"+v+".txt");
-
+            s = s.Replace("\r\n"," ");
             Palabra[] res = new Palabra[s.Split(' ').Length];
             int i = 0;
             foreach (string temp in s.Split(' '))
             {
                 
-                if (!temp.Equals(""))
+                if (!temp.Equals("") && !temp.Equals(" "))
                 {
                     res[i] = new Palabra(temp.ToUpper(),ENEMY, Colors.White);
                     

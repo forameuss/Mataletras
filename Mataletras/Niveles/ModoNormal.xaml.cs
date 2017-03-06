@@ -33,7 +33,7 @@ namespace Mataletras
         private Random random;
         private Palabra[] palabras;
         private List<Palabra> palabrasActuales;
-        private int ALTURA = 500;
+        private int ALTURA = 480;
         int contador = 0;
         int posNaveX = 225;
         int posNaveY = 500;
@@ -177,21 +177,54 @@ namespace Mataletras
             if (direccion == "Right" || direccion == "Left")
             {
                 animacion.From = posNaveX;
-                animacion.To = posNaveX + v;
+                if ((posNaveX + v) < 0)
+                {
+                    v = 0;
+                    animacion.To = v;
+                }
+                else if ((posNaveX + v) > 450)
+                {
+                    v = 450;
+                    animacion.To = v;
+                }
+                else
+                    animacion.To = posNaveX + v;
             }
             else
             {
                 animacion.From = posNaveY;
-                animacion.To = posNaveY + v;
+                if ((posNaveY + v) < 0)
+                {
+                    v = 0;
+                    animacion.To = v;
+                }
+                else if ((posNaveY + v) > 450)
+                {
+                    v = 450;
+                    animacion.To = v;
+                }
+                else
+                    animacion.To = posNaveY + v;
+                
             }
             animacion.Duration = new Duration(TimeSpan.FromMilliseconds(100));
             Storyboard.SetTarget(animacion, nave); Storyboard.SetTargetProperty(animacion, "(Canvas." + direccion + ")");
             storyboard.Children.Add(animacion);
             storyboard.Begin();
             if (direccion == "Right" || direccion == "Left")
-                posNaveX += v;
+            {
+                if (v == 450)
+                    posNaveX = 450;
+                else
+                    posNaveX += v;
+            }
             else
-                posNaveY += v;
+            {
+                if (v == 450)
+                    posNaveY = 450;
+                else
+                    posNaveY += v;
+            }
         }
 
 

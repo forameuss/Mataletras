@@ -116,21 +116,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\images\earth.png" />
-<<<<<<< HEAD
     <Content Include="Assets\images\endEarth.gif" />
     <Content Include="Assets\images\explosion.gif" />
-=======
-    <Content Include="Assets\images\explosion.gif" />
     <Content Include="Assets\images\gameOver.gif" />
->>>>>>> Alberto
     <Content Include="Assets\images\nave.gif" />
     <Content Include="Assets\images\naveoff.png" />
     <Content Include="Assets\images\naveon.png" />
     <Content Include="Assets\images\naveonpower.png" />
     <Content Include="Assets\images\piyun.png" />
     <Content Include="Assets\images\universe.png" />
-<<<<<<< HEAD
-=======
     <Content Include="Assets\sound\disparo.mp3" />
     <Content Include="Assets\sound\explosion.mp3" />
     <Content Include="Assets\sound\music.mp3" />
@@ -138,7 +132,6 @@
     <Content Include="Assets\textos\Nivel2.txt" />
     <Content Include="Assets\textos\Nivel1.txt" />
     <Content Include="Assets\textos\testo.txt" />
->>>>>>> Alberto
     <Content Include="Assets\textos\test.txt" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

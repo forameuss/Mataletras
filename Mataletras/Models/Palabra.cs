@@ -35,6 +35,7 @@ namespace Mataletras.Models
         public bool quitarLetra(char letra)
         {
             bool res = false;
+            if(letras.Length > 0)
             if (letras[0] == letra){
                 letras = letras.Remove(0,1);
                 textBlock.Text = letras;

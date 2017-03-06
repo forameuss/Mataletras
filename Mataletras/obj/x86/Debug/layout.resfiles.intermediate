@@ -1,12 +1,8 @@
 WinMetadata\Windows.winmd
 Assets\images\earth.png
-<<<<<<< HEAD
 Assets\images\endEarth.gif
 Assets\images\explosion.gif
-=======
-Assets\images\explosion.gif
 Assets\images\gameOver.gif
->>>>>>> Alberto
 Assets\images\nave.gif
 Assets\images\naveoff.png
 Assets\images\naveon.png
@@ -22,15 +18,11 @@ Assets\Square150x150Logo.scale-200.png
 Assets\Square44x44Logo.scale-200.png
 Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
-<<<<<<< HEAD
-Assets\textos\test.txt
-=======
 Assets\textos\genesis.txt
 Assets\textos\Nivel1.txt
 Assets\textos\Nivel2.txt
 Assets\textos\test.txt
 Assets\textos\testo.txt
->>>>>>> Alberto
 Assets\Wide310x150Logo.scale-200.png
 Mataletras.xr.xml
 Properties\Default.rd.xml
